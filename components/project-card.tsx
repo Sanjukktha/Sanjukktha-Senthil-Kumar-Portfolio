@@ -19,8 +19,7 @@ export function ProjectCard({ project, index }: ProjectCardProps) {
   return (
     <Link href={`/projects/${project.id}`}>
       <article
-        className="group h-full bg-card border border-border rounded-xl p-6 hover:border-primary/50 hover:shadow-lg hover:shadow-primary/10 transition-all duration-300 animate-fade-in-up opacity-0"
-        style={{ animationDelay: `${index * 100}ms` }}
+        className="group h-full sketch-card hover:border-primary/70 hover:shadow-lg transition-all duration-300"
       >
         <div className="flex items-start justify-between mb-3">
           <span

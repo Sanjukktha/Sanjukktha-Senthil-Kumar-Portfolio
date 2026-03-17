@@ -12,7 +12,7 @@ interface ExperienceCardProps {
 export function ExperienceCard({ experience, index }: ExperienceCardProps) {
   return (
     <article
-      className="group bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
+      className="group sketch-card hover:border-primary/70 transition-all duration-300"
     >
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
         <div className="flex-1">
