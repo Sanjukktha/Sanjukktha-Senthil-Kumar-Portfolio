@@ -123,16 +123,16 @@ export function HeroSection() {
                 />
               </div>
 
-              {/* Company Logos - directly under profile pic, no squares, bigger */}
-              <div className="flex items-center justify-center gap-6 mt-6">
+              {/* Company Logos - directly under profile pic, no squares, Goldman biggest */}
+              <div className="flex items-center justify-center gap-8 mt-6">
                 {companies.map((company) => (
                   <Image
                     key={company.name}
                     src={company.logo}
                     alt={company.name}
-                    width={100}
-                    height={100}
-                    className="object-contain h-16 w-auto"
+                    width={120}
+                    height={60}
+                    className={`object-contain w-auto ${company.size}`}
                   />
                 ))}
               </div>

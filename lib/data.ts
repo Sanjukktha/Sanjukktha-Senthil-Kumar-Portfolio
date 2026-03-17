@@ -21,21 +21,25 @@ export const companies = [
     name: "Goldman Sachs",
     logo: "/logos/goldman-sachs.png",
     url: "https://www.goldmansachs.com",
+    size: "h-14", // biggest
   },
   {
     name: "Saint-Gobain Research",
-    logo: "/logos/saint-gobain.jpg",
+    logo: "/logos/saint-gobain.png",
     url: "https://www.saint-gobain.com",
+    size: "h-10",
   },
   {
     name: "TeleApps",
     logo: "/logos/teleapps.avif",
     url: "#",
+    size: "h-10",
   },
   {
     name: "Bahwan CyberTek",
-    logo: "/logos/bahwan-cybertek.jpg",
+    logo: "/logos/bahwan-cybertek.png",
     url: "https://www.bahwan.com",
+    size: "h-8",
   },
 ];
 
@@ -111,7 +115,7 @@ export const sweExperiences: Experience[] = [
     role: "Product Manager, Research Systems",
     location: "Tamil Nadu, India",
     date: "Jun 2024",
-    logo: "/logos/saint-gobain.jpg",
+    logo: "/logos/saint-gobain.png",
     bullets: [
       "Led development of a web-based analytics platform tracking glass performance across 15 experimental use cases (glass fiber)",
       "Defined data standards and metadata governance to support real-time comparison of 30+ material scenarios, reducing analysis time by 12%",
@@ -138,7 +142,7 @@ export const sweExperiences: Experience[] = [
     role: "Technology Operations Analyst",
     location: "Chennai, Tamil Nadu, India",
     date: "Feb 2022",
-    logo: "/logos/bahwan-cybertek.jpg",
+    logo: "/logos/bahwan-cybertek.png",
     bullets: [
       "Supported enterprise data by extracting, validating, and reconciling large datasets across multiple systems to improve client reporting accuracy",
       "Built Python based data analysis scripts and dashboards to evaluate user behavior and market trends for consulting and delivery teams",
@@ -171,7 +175,7 @@ export const mlExperiences: Experience[] = [
     role: "Product Manager - ML Engineer",
     location: "Tamil Nadu, India",
     date: "Jun 2024",
-    logo: "/logos/saint-gobain.jpg",
+    logo: "/logos/saint-gobain.png",
     bullets: [
       "Built a data analytics platform using regression model workflows to model experimental material performance across 15 research programs",
       "Designed standardized data schemas and metadata pipelines to enable large-scale comparison of 30+ material scenarios",
@@ -198,7 +202,7 @@ export const mlExperiences: Experience[] = [
     role: "Data Engineer, Analytics Automation",
     location: "Chennai, Tamil Nadu, India",
     date: "Feb 2022",
-    logo: "/logos/bahwan-cybertek.jpg",
+    logo: "/logos/bahwan-cybertek.png",
     bullets: [
       "Supported enterprise data by extracting, validating, and reconciling large datasets across multiple systems to improve client reporting accuracy",
       "Built Python based data analysis scripts and dashboards to evaluate user behavior and market trends for consulting and delivery teams",
@@ -230,7 +234,7 @@ export const dataExperiences: Experience[] = [
     role: "Data Analyst, Research & Performance Analytics",
     location: "Tamil Nadu, India",
     date: "Jun 2024",
-    logo: "/logos/saint-gobain.jpg",
+    logo: "/logos/saint-gobain.png",
     bullets: [
       "Analyzed experimental data from 15+ glass fiber trials using SQL-based aggregation to identify durability trends for R&D teams",
       "Built metadata frameworks enabling comparison of 30+ material variants, reducing analysis turnaround by ~12% for research engineers",
@@ -257,7 +261,7 @@ export const dataExperiences: Experience[] = [
     role: "Junior Data Engineer, Business Intelligence",
     location: "Chennai, Tamil Nadu, India",
     date: "Feb 2022",
-    logo: "/logos/bahwan-cybertek.jpg",
+    logo: "/logos/bahwan-cybertek.png",
     bullets: [
       "Built reconciliation pipelines using SQL Server, Informatica PowerCenter, and Excel Power Query to validate 500K+ records across finance and operations systems",
       "Developed operational dashboards in Power BI and SSRS to track service delivery KPIs, utilization, and exception rates for consulting teams",
