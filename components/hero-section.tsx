@@ -171,7 +171,7 @@ export function HeroSection() {
             </div>
 
             {/* Education */}
-            <div className="sketch-card">
+            <div className="bg-card border border-border rounded-xl p-4 sm:p-6 shadow-sm">
               <h2 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">
                 Education
               </h2>
@@ -195,7 +195,7 @@ export function HeroSection() {
             </div>
 
             {/* Certifications */}
-            <div className="sketch-card">
+            <div className="bg-card border border-border rounded-xl p-4 sm:p-6 shadow-sm">
               <h2 className="text-base sm:text-lg font-semibold text-foreground mb-3 sm:mb-4">
                 Certifications
               </h2>
@@ -203,7 +203,7 @@ export function HeroSection() {
                 {certifications.map((cert, index) => (
                   <span
                     key={index}
-                    className="px-3 sm:px-4 py-2 bg-secondary text-secondary-foreground text-xs sm:text-sm rounded-lg leading-relaxed hover:shadow-md transition-shadow"
+                    className="px-3 sm:px-4 py-2 bg-secondary text-secondary-foreground text-xs sm:text-sm rounded-lg leading-relaxed"
                   >
                     {cert}
                   </span>
