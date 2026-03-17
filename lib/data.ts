@@ -126,7 +126,7 @@ export const sweExperiences: Experience[] = [
   },
   {
     company: "TeleApps",
-    role: "Associate Product Operations Engineer",
+    role: "Associate Product Engineer",
     location: "Tamil Nadu, India",
     date: "Mar 2023",
     logo: "/logos/teleapps.avif",
@@ -139,7 +139,7 @@ export const sweExperiences: Experience[] = [
   },
   {
     company: "Bahwan CyberTek",
-    role: "Technology Operations Analyst",
+    role: "Technology Analyst",
     location: "Chennai, Tamil Nadu, India",
     date: "Feb 2022",
     logo: "/logos/bahwan-cybertek.png",
@@ -156,7 +156,7 @@ export const sweExperiences: Experience[] = [
 export const mlExperiences: Experience[] = [
   {
     company: "Goldman Sachs",
-    role: "LLM Engineer Analyst",
+    role: "Summer Engineer Analyst",
     location: "Dallas, Texas, USA",
     date: "Aug 2025",
     logo: "/logos/goldman-sachs.png",
@@ -172,7 +172,7 @@ export const mlExperiences: Experience[] = [
   },
   {
     company: "Saint-Gobain Research",
-    role: "Product Manager - ML Engineer",
+    role: "Product Manager, Research Systems",
     location: "Tamil Nadu, India",
     date: "Jun 2024",
     logo: "/logos/saint-gobain.png",
@@ -186,7 +186,7 @@ export const mlExperiences: Experience[] = [
   },
   {
     company: "TeleApps",
-    role: "Associate ML Operations Engineer",
+    role: "Associate Product Engineer",
     location: "Tamil Nadu, India",
     date: "Mar 2023",
     logo: "/logos/teleapps.avif",
@@ -199,7 +199,7 @@ export const mlExperiences: Experience[] = [
   },
   {
     company: "Bahwan CyberTek",
-    role: "Data Engineer, Analytics Automation",
+    role: "Technology Analyst",
     location: "Chennai, Tamil Nadu, India",
     date: "Feb 2022",
     logo: "/logos/bahwan-cybertek.png",
@@ -216,7 +216,7 @@ export const mlExperiences: Experience[] = [
 export const dataExperiences: Experience[] = [
   {
     company: "Goldman Sachs",
-    role: "Data Engineer Analyst",
+    role: "Summer Engineer Analyst",
     location: "Dallas, Texas, USA",
     date: "Aug 2025",
     logo: "/logos/goldman-sachs.png",
@@ -231,7 +231,7 @@ export const dataExperiences: Experience[] = [
   },
   {
     company: "Saint-Gobain Research",
-    role: "Data Analyst, Research & Performance Analytics",
+    role: "Product Manager, Research Systems",
     location: "Tamil Nadu, India",
     date: "Jun 2024",
     logo: "/logos/saint-gobain.png",
@@ -245,7 +245,7 @@ export const dataExperiences: Experience[] = [
   },
   {
     company: "TeleApps",
-    role: "Associate Data Analyst, Customer & Campaign Analytics",
+    role: "Associate Product Engineer",
     location: "Tamil Nadu, India",
     date: "Mar 2023",
     logo: "/logos/teleapps.avif",
@@ -258,7 +258,7 @@ export const dataExperiences: Experience[] = [
   },
   {
     company: "Bahwan CyberTek",
-    role: "Junior Data Engineer, Business Intelligence",
+    role: "Technology Analyst",
     location: "Chennai, Tamil Nadu, India",
     date: "Feb 2022",
     logo: "/logos/bahwan-cybertek.png",
