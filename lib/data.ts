@@ -155,6 +155,7 @@ export const mlExperiences: Experience[] = [
     role: "LLM Engineer Analyst",
     location: "Dallas, Texas, USA",
     date: "Aug 2025",
+    logo: "/logos/goldman-sachs.png",
     bullets: [
       "Built and deployed TalentFlowAI, a multi-step agentic LLM pipeline using LangChain and tool calling to automate candidate profiling",
       "Implemented embedding-based semantic retrieval and ranking pipelines to automate applicant prioritization and recruiter screening workflows",
@@ -170,6 +171,7 @@ export const mlExperiences: Experience[] = [
     role: "Product Manager - ML Engineer",
     location: "Tamil Nadu, India",
     date: "Jun 2024",
+    logo: "/logos/saint-gobain.jpg",
     bullets: [
       "Built a data analytics platform using regression model workflows to model experimental material performance across 15 research programs",
       "Designed standardized data schemas and metadata pipelines to enable large-scale comparison of 30+ material scenarios",
@@ -183,6 +185,7 @@ export const mlExperiences: Experience[] = [
     role: "Associate ML Operations Engineer",
     location: "Tamil Nadu, India",
     date: "Mar 2023",
+    logo: "/logos/teleapps.avif",
     bullets: [
       "Built RESTful ML analytics services using TensorFlow and Flask to power customer engagement and campaign performance platforms",
       "Deployed containerized ML microservices for real-time inference and internal reporting, implementing model versioning, lazy loading, and request-level caching, reducing cold-start latency and inference load time by ~20%",
@@ -195,6 +198,7 @@ export const mlExperiences: Experience[] = [
     role: "Data Engineer, Analytics Automation",
     location: "Chennai, Tamil Nadu, India",
     date: "Feb 2022",
+    logo: "/logos/bahwan-cybertek.jpg",
     bullets: [
       "Supported enterprise data by extracting, validating, and reconciling large datasets across multiple systems to improve client reporting accuracy",
       "Built Python based data analysis scripts and dashboards to evaluate user behavior and market trends for consulting and delivery teams",
@@ -211,6 +215,7 @@ export const dataExperiences: Experience[] = [
     role: "Data Engineer Analyst",
     location: "Dallas, Texas, USA",
     date: "Aug 2025",
+    logo: "/logos/goldman-sachs.png",
     bullets: [
       "Built hiring analytics datasets using PostgreSQL and Amazon Redshift to analyze 10,000+ applicants and recruitment funnel performance",
       "Developed automated scoring workflows using Apache NiFi and scheduled batch jobs, reducing manual recruiter review effort by ~16%",
@@ -225,6 +230,7 @@ export const dataExperiences: Experience[] = [
     role: "Data Analyst, Research & Performance Analytics",
     location: "Tamil Nadu, India",
     date: "Jun 2024",
+    logo: "/logos/saint-gobain.jpg",
     bullets: [
       "Analyzed experimental data from 15+ glass fiber trials using SQL-based aggregation to identify durability trends for R&D teams",
       "Built metadata frameworks enabling comparison of 30+ material variants, reducing analysis turnaround by ~12% for research engineers",
@@ -238,6 +244,7 @@ export const dataExperiences: Experience[] = [
     role: "Associate Data Analyst, Customer & Campaign Analytics",
     location: "Tamil Nadu, India",
     date: "Mar 2023",
+    logo: "/logos/teleapps.avif",
     bullets: [
       "Built customer analytics pipelines integrating Google Analytics, CRM data, and Amazon Redshift to analyze 300k+ user interactions and track acquisition, engagement, and conversion funnels across campaigns",
       "Developed executive and marketing performance dashboards in Power BI and Excel Power Pivot tracking 15+ KPIs including ROI, CTR, retention, and cohort behavior for leadership teams",
@@ -250,6 +257,7 @@ export const dataExperiences: Experience[] = [
     role: "Junior Data Engineer, Business Intelligence",
     location: "Chennai, Tamil Nadu, India",
     date: "Feb 2022",
+    logo: "/logos/bahwan-cybertek.jpg",
     bullets: [
       "Built reconciliation pipelines using SQL Server, Informatica PowerCenter, and Excel Power Query to validate 500K+ records across finance and operations systems",
       "Developed operational dashboards in Power BI and SSRS to track service delivery KPIs, utilization, and exception rates for consulting teams",

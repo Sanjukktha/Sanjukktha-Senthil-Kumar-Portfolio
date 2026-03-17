@@ -1,7 +1,7 @@
 "use client";
 
 import { personalInfo, education, certifications, companies } from "@/lib/data";
-import { Mail, MapPin, Linkedin, ArrowRight, FolderGit2 } from "lucide-react";
+import { Mail, MapPin, Linkedin, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -13,22 +13,22 @@ export function HeroSection() {
           {/* Left Column - Introduction */}
           <div className="space-y-8">
             <div className="space-y-4">
-              <p className="text-primary text-sm font-medium tracking-wider uppercase animate-fade-in-up opacity-0 animation-delay-100">
+              <p className="text-primary text-sm font-medium tracking-wider uppercase">
                 Welcome
               </p>
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight animate-fade-in-up opacity-0 animation-delay-200">
+              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground leading-tight">
                 <span className="text-balance">{personalInfo.name}</span>
               </h1>
-              <p className="text-xl md:text-2xl text-primary font-medium animate-fade-in-up opacity-0 animation-delay-300">
+              <p className="text-xl md:text-2xl text-primary font-medium">
                 {personalInfo.title}
               </p>
             </div>
 
-            <p className="text-muted-foreground text-lg leading-relaxed animate-fade-in-up opacity-0 animation-delay-400">
+            <p className="text-muted-foreground text-lg leading-relaxed">
               {personalInfo.summary}
             </p>
 
-            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground animate-fade-in-up opacity-0 animation-delay-500">
+            <div className="flex flex-wrap gap-4 text-sm text-muted-foreground">
               <span className="flex items-center gap-2">
                 <MapPin size={16} className="text-primary" />
                 {personalInfo.location}
@@ -52,7 +52,7 @@ export function HeroSection() {
             </div>
 
             {/* Explore My Experience */}
-            <div className="pt-4 animate-fade-in-up opacity-0 animation-delay-600">
+            <div className="pt-4">
               <p className="text-sm font-medium text-foreground mb-4">
                 Explore My Experience
               </p>
@@ -91,7 +91,7 @@ export function HeroSection() {
             </div>
 
             {/* Explore My Projects */}
-            <div className="pt-2 animate-fade-in-up opacity-0 animation-delay-700">
+            <div className="pt-2">
               <p className="text-sm font-medium text-foreground mb-4">
                 Explore My Projects
               </p>
@@ -109,10 +109,10 @@ export function HeroSection() {
           </div>
 
           {/* Right Column - Profile Picture, Education & Certifications */}
-          <div className="space-y-6 animate-fade-in-up opacity-0 animation-delay-400">
+          <div className="space-y-6">
             {/* Large Profile Picture */}
-            <div className="flex justify-center">
-              <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/40 shadow-xl shadow-primary/20 animate-float">
+            <div className="flex flex-col items-center">
+              <div className="w-64 h-64 md:w-72 md:h-72 lg:w-80 lg:h-80 rounded-full overflow-hidden border-4 border-primary/40 shadow-xl shadow-primary/20">
                 <Image
                   src="/profile.jpg"
                   alt="Sanjukktha Senthil Kumar"
@@ -122,21 +122,20 @@ export function HeroSection() {
                   priority
                 />
               </div>
-            </div>
 
-            {/* Company Logos */}
-            <div className="flex flex-wrap justify-center gap-6 px-4">
-              {companies.map((company) => (
-                <div key={company.name} className="flex items-center justify-center">
+              {/* Company Logos - directly under profile pic, no squares, bigger */}
+              <div className="flex items-center justify-center gap-6 mt-6">
+                {companies.map((company) => (
                   <Image
+                    key={company.name}
                     src={company.logo}
                     alt={company.name}
-                    width={80}
-                    height={80}
-                    className="object-contain"
+                    width={100}
+                    height={100}
+                    className="object-contain h-16 w-auto"
                   />
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
 
             {/* Education */}

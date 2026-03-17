@@ -12,8 +12,7 @@ interface ExperienceCardProps {
 export function ExperienceCard({ experience, index }: ExperienceCardProps) {
   return (
     <article
-      className="group bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300 animate-fade-in-up opacity-0"
-      style={{ animationDelay: `${index * 100}ms` }}
+      className="group bg-card border border-border rounded-xl p-6 hover:border-primary/50 transition-all duration-300"
     >
       <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
         <div className="flex-1">
@@ -36,15 +35,13 @@ export function ExperienceCard({ experience, index }: ExperienceCardProps) {
           </div>
         </div>
         {experience.logo && (
-          <div className="flex-shrink-0">
-            <Image
-              src={experience.logo}
-              alt={`${experience.company} logo`}
-              width={64}
-              height={64}
-              className="object-contain"
-            />
-          </div>
+          <Image
+            src={experience.logo}
+            alt={`${experience.company} logo`}
+            width={80}
+            height={80}
+            className="object-contain h-16 w-auto flex-shrink-0"
+          />
         )}
       </div>
 
