@@ -7,11 +7,10 @@ import {
   getProjectsByType,
   skillsByCategory,
   ExperienceType,
-  resumeLinks,
 } from "@/lib/data";
 import { notFound } from "next/navigation";
 import Link from "next/link";
-import { ArrowRight, Briefcase, FolderGit2, Wrench, Download } from "lucide-react";
+import { ArrowRight, Briefcase, FolderGit2, Wrench } from "lucide-react";
 
 const typeConfig = {
   swe: {
@@ -88,16 +87,6 @@ export default async function ExperiencePage({ params }: PageProps) {
           <p className="text-muted-foreground text-lg max-w-2xl animate-fade-in-up opacity-0 animation-delay-300">
             {config.description}
           </p>
-          <div className="mt-6 animate-fade-in-up opacity-0 animation-delay-400">
-            <a
-              href={resumeLinks[experienceType]}
-              download
-              className="inline-flex items-center gap-2 px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium hover:bg-primary/90 transition-all"
-            >
-              <Download size={18} />
-              Download {config.title} Resume
-            </a>
-          </div>
         </div>
       </section>
 
