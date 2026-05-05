@@ -161,7 +161,7 @@ export const experiences: Experience[] = [
     location: "Tamil Nadu, India",
     date: "Mar 2022 – Dec 2023",
     logo: "/logos/teleapps.avif",
-    pdfPath: "/work-exp/teleapps-product-engineer.pdf",
+    pdfPath: "/work-exp/teleapps-tech-ops.pdf",
     bullets: [
       "Engineered ML inference services using Kafka, FastAPI, Redis caching, and ONNX Runtime to classify caller intent in IVR utterances for a telecom client, achieving sub-200ms end-to-end latency under concurrent campaign workloads without GPU infrastructure.",
       "Containerized microservices for inference with request-level caching, model versioning, and lazy loading at first inference request.",
@@ -183,7 +183,7 @@ export const experiences: Experience[] = [
     location: "Tamil Nadu, India",
     date: "Jun 2021 – Feb 2022",
     logo: "/logos/teleapps.avif",
-    pdfPath: "/work-exp/teleapps-tech-ops.pdf",
+    pdfPath: "/work-exp/teleapps-product-engineer.pdf",
     bullets: [
       "Built Python data pipelines to extract, validate, and reconcile wind turbine sensor time-series data — implementing per-column z-score outlier detection and forward-fill gap recovery to preserve data integrity without silently dropping flagged readings.",
       "Developed performance dashboards using matplotlib and seaborn (heatmaps, anomaly scatter plots), enabling operations teams to identify underperforming turbines.",
