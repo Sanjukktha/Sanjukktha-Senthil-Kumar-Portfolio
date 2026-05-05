@@ -1,19 +1,39 @@
 import { Navigation } from "@/components/navigation";
-import { HeroSection } from "@/components/hero-section";
+import { AnimatedCursor } from "@/components/animated-cursor";
+import { HeroSection } from "@/components/sections/hero-section";
+import { AboutSection } from "@/components/sections/about-section";
+import { ExperienceSection } from "@/components/sections/experience-section";
+import { ProjectsSection } from "@/components/sections/projects-section";
+import { SkillsSection } from "@/components/sections/skills-section";
+import { EducationSection } from "@/components/sections/education-section";
+import { ContactSection } from "@/components/sections/contact-section";
 
 export default function Home() {
   return (
-    <main className="min-h-screen" style={{ backgroundColor: '#fff5f7' }}>
+    <>
+      <AnimatedCursor />
       <Navigation />
-      <HeroSection />
-
-      {/* Footer */}
-      <footer className="border-t border-border py-8 px-6 bg-card/30">
-        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4 text-sm text-muted-foreground">
-          <p>Sanjukktha Senthil Kumar</p>
-          <p>Built with Next.js</p>
-        </div>
+      <main>
+        <HeroSection />
+        <AboutSection />
+        <ExperienceSection />
+        <EducationSection />
+        <ProjectsSection />
+        <SkillsSection />
+        <ContactSection />
+      </main>
+      <footer
+        style={{
+          background: "#080f1e",
+          color: "rgba(255,255,255,0.25)",
+          textAlign: "center",
+          padding: "1.5rem",
+          fontSize: "0.78rem",
+          letterSpacing: "0.04em",
+        }}
+      >
+        © {new Date().getFullYear()} Sanjukktha Senthil Kumar · Arlington, TX
       </footer>
-    </main>
+    </>
   );
 }

@@ -3,8 +3,30 @@ __v0_runtime_loader.js
 __v0_devtools.tsx
 __v0_jsx-dev-runtime.ts
 
-# Common ignores
+# Dependencies
 node_modules/
+
+# Next.js build output
 .next/
+next-env.d.ts
+tsconfig.tsbuildinfo
+
+# Local env (never commit secrets)
+.env
+.env.local
 .env*.local
+
+# Logs
+dev.log
+*.log
+
+# Editor / OS
 .DS_Store
+.vscode/
+.idea/
+
+# Local source assets (large binaries / source resumes — already mirrored under public/)
+assets/
+
+# Claude Code project state
+.claude/

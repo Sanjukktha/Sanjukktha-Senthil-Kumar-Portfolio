@@ -1,99 +1,115 @@
 "use client";
 
-import Link from "next/link";
-import { usePathname } from "next/navigation";
-import { cn } from "@/lib/utils";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
 
-const navItems = [
-  { href: "/", label: "About" },
-  { href: "/experience/swe", label: "SWE" },
-  { href: "/experience/ml", label: "ML/AI" },
-  { href: "/experience/data", label: "Data" },
-  { href: "/projects", label: "Projects" },
-  { href: "/contact", label: "Contact" },
+const NAV_LINKS = [
+  { href: "#about", label: "About" },
+  { href: "#experience", label: "Experience" },
+  { href: "#projects", label: "Projects" },
+  { href: "#skills", label: "Skills" },
+  { href: "#contact", label: "Contact" },
 ];
 
 export function Navigation() {
-  const pathname = usePathname();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 40);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-border" style={{ backgroundColor: 'rgba(255, 245, 247, 0.9)' }}>
-      <nav className="max-w-6xl mx-auto px-6 py-4">
-        <div className="flex items-center justify-between">
-          <Link
-            href="/"
-            className="text-lg font-semibold text-foreground hover:text-primary transition-colors"
-          >
-            Sanjukktha Senthil Kumar
-          </Link>
+    <header
+      className="fixed top-0 left-0 right-0 z-50 border-b transition-all duration-300"
+      style={{
+        height: scrolled ? "56px" : "68px",
+        background: "rgba(250, 248, 244, 0.92)",
+        backdropFilter: "blur(20px)",
+        WebkitBackdropFilter: "blur(20px)",
+        borderColor: "rgba(0,0,0,0.08)",
+      }}
+    >
+      <nav className="max-w-7xl mx-auto h-full px-6 sm:px-10 flex items-center justify-between">
+        <a
+          href="#top"
+          className="font-serif text-[1.1rem] sm:text-[1.25rem] font-semibold transition-colors"
+          style={{ color: "var(--navy)" }}
+        >
+          Sanjukktha Senthil Kumar
+        </a>
 
-          {/* Desktop Navigation */}
-          <ul className="hidden md:flex items-center gap-8">
-            {navItems.map((item) => {
-              const isActive =
-                pathname === item.href ||
-                (item.href !== "/" && pathname.startsWith(item.href));
-              return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    className={cn(
-                      "text-sm font-medium transition-colors relative py-2",
-                      isActive
-                        ? "text-primary"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    {item.label}
-                    {isActive && (
-                      <span className="absolute -bottom-1 left-0 right-0 h-0.5 bg-primary rounded-full" />
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
+        <ul className="hidden md:flex items-center gap-8 lg:gap-10 list-none">
+          {NAV_LINKS.map((link) => (
+            <li key={link.href}>
+              <a
+                href={link.href}
+                className="nav-anchor relative text-[0.78rem] font-medium tracking-[0.06em] uppercase transition-colors"
+                style={{ color: "var(--muted)" }}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))}
+        </ul>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden p-2 text-foreground"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            aria-label="Toggle menu"
-          >
-            {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
-        </div>
-
-        {/* Mobile Navigation */}
-        {mobileMenuOpen && (
-          <ul className="md:hidden mt-4 pb-4 flex flex-col gap-4 animate-fade-in">
-            {navItems.map((item) => {
-              const isActive =
-                pathname === item.href ||
-                (item.href !== "/" && pathname.startsWith(item.href));
-              return (
-                <li key={item.href}>
-                  <Link
-                    href={item.href}
-                    onClick={() => setMobileMenuOpen(false)}
-                    className={cn(
-                      "text-sm font-medium transition-colors block py-2",
-                      isActive
-                        ? "text-primary"
-                        : "text-muted-foreground hover:text-foreground"
-                    )}
-                  >
-                    {item.label}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        )}
+        <button
+          aria-label="Toggle menu"
+          className="md:hidden p-2 -mr-2"
+          style={{ color: "var(--navy)" }}
+          onClick={() => setOpen((v) => !v)}
+        >
+          {open ? <X size={22} /> : <Menu size={22} />}
+        </button>
       </nav>
+
+      {open && (
+        <div
+          className="md:hidden border-t"
+          style={{
+            background: "rgba(250, 248, 244, 0.98)",
+            backdropFilter: "blur(20px)",
+            borderColor: "rgba(0,0,0,0.08)",
+          }}
+        >
+          <ul className="flex flex-col gap-1 px-6 py-4 list-none">
+            {NAV_LINKS.map((link) => (
+              <li key={link.href}>
+                <a
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  className="block py-3 text-[0.78rem] font-medium tracking-[0.06em] uppercase"
+                  style={{ color: "var(--muted)" }}
+                >
+                  {link.label}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <style jsx>{`
+        .nav-anchor::after {
+          content: "";
+          position: absolute;
+          left: 0;
+          bottom: -3px;
+          width: 0;
+          height: 1px;
+          background: var(--accent);
+          transition: width 0.3s ease;
+        }
+        .nav-anchor:hover {
+          color: var(--text);
+        }
+        .nav-anchor:hover::after {
+          width: 100%;
+        }
+      `}</style>
     </header>
   );
 }

@@ -1,27 +1,54 @@
 export const personalInfo = {
   name: "Sanjukktha Senthil Kumar",
-  location: "Arlington, TX",
+  firstName: "Sanjukktha",
+  lastName: "Senthil Kumar",
+  location: "Dallas, TX",
   email: "sanjukkthasenthilkumar@gmail.com",
   phone: "6823908174",
   linkedin: "linkedin.com/in/sanjukkthasenthilkumar",
   github: "https://github.com/Sanjukktha",
-  title: "Software Engineer | ML Engineer | Data Scientist",
+  title: "AI & Software Engineer",
+  eyebrow: "AI & Software Engineer · Dallas, TX (Open to Relocation)",
+  tagline: "Building scalable systems and intelligent products",
   summary:
-    "I'm a full-stack engineer with expertise spanning software engineering, machine learning, and data analytics. Currently pursuing my MS in Computer Science at UT Arlington with a perfect 4.0 GPA. I have experience building scalable systems, AI-powered applications, and data-driven solutions at Goldman Sachs, Saint-Gobain Research, TeleApps, and Bahwan CyberTek.",
+    "Software engineer building full-stack applications and AI systems that work in the real world.",
+  about: [
+    "I'm Sanjukktha Senthil Kumar, a software engineer finishing my CS master's at UT Arlington (GPA: 4.0, graduated May 2026) with 3+ years of professional experience building full-stack applications and AI systems across enterprise and startup environments.",
+    "I've worked across the stack, from frontend interfaces to backend services to cloud infrastructure, and have hands-on production experience with agentic AI pipelines, RAG systems, and distributed backend engineering. I enjoy working on problems where the engineering actually matters and where what I ship reaches real users.",
+    "Based in Dallas, TX, open to relocation. Available full-time from June 2026.",
+  ],
 };
 
-export const resumeLinks = {
-  swe: "/resumes/swe-resume.pdf",
-  ml: "/resumes/ml-ai-resume.pdf",
-  data: "/resumes/data-resume.pdf",
-};
+export const heroStats = [
+  {
+    value: "4.0",
+    decimal: 1,
+    suffix: "",
+    label: "MS Computer Science GPA at UT Arlington",
+  },
+  {
+    value: "3",
+    suffix: "+",
+    label: "Years building production full-stack and AI systems",
+  },
+  {
+    value: "9",
+    suffix: "+",
+    label: "Shipped projects across systems, AI, and data",
+  },
+  {
+    value: "7",
+    suffix: "",
+    label: "Cloud and ML certifications across AWS, Azure, and Stanford",
+  },
+];
 
 export const companies = [
   {
     name: "Goldman Sachs",
     logo: "/logos/goldman-sachs.png",
     url: "https://www.goldmansachs.com",
-    size: "h-14", // biggest
+    size: "h-14",
   },
   {
     name: "Saint-Gobain Research",
@@ -35,12 +62,6 @@ export const companies = [
     url: "#",
     size: "h-10",
   },
-  {
-    name: "Bahwan CyberTek",
-    logo: "/logos/bahwan-cybertek.png",
-    url: "https://www.bahwan.com",
-    size: "h-8",
-  },
 ];
 
 export const education = [
@@ -48,39 +69,31 @@ export const education = [
     degree: "Master of Science in Computer Science",
     school: "University of Texas at Arlington",
     location: "Arlington, TX",
-    date: "May 2026",
-    gpa: "4.00/4.00",
-    courses: [
-      "Software Engineering II",
-      "Data Analysis & Modelling Techniques",
-      "Design and Analysis of Algorithm",
-    ],
+    date: "Aug 2024 – May 2026",
+    gpa: "4.00",
+    honors:
+      "Software Engineering II · Data Analysis & Modelling Techniques · Design and Analysis of Algorithms",
   },
   {
     degree: "Bachelor of Technology in Computer Science and Engineering",
     school: "SASTRA University",
     location: "Tamil Nadu, India",
-    gpa: "4.00/4.00",
-    courses: [
-      "Software Engineering",
-      "Data warehouse & Data mining",
-      "Natural Language Processing",
-      "Cloud Computing",
-    ],
+    date: "",
+    gpa: "4.00",
+    honors:
+      "Software Engineering · Data Warehousing & Mining · Natural Language Processing · Cloud Computing",
   },
 ];
 
 export const certifications = [
   "AWS Certified Cloud Practitioner",
   "AWS Certified Solutions Architect",
-  "Stanford Machine Learning Certified",
+  "Stanford Machine Learning",
   "Microsoft Azure Data Engineer Associate",
-  "Microsoft SQL Server Certification",
-  "SnowPro Core Certification",
+  "Microsoft SQL Server",
+  "SnowPro Core",
   "Azure Fundamentals",
 ];
-
-export type ExperienceType = "swe" | "ml" | "data";
 
 export interface Experience {
   company: string;
@@ -88,439 +101,405 @@ export interface Experience {
   location: string;
   date: string;
   bullets: string[];
-  type: ExperienceType;
+  tags: string[];
   logo?: string;
+  pdfPath?: string;
 }
 
-// SWE Experiences - exactly as per SWE resume
-export const sweExperiences: Experience[] = [
+export const experiences: Experience[] = [
   {
     company: "Goldman Sachs",
     role: "Summer Engineer Analyst",
-    location: "Dallas, Texas, USA",
-    date: "Aug 2025",
+    location: "Dallas, TX",
+    date: "Jun 2025 – Aug 2025",
     logo: "/logos/goldman-sachs.png",
+    pdfPath: "/work-exp/goldman-sachs.pdf",
     bullets: [
-      "Deployed TalentFlowAI, a multi-step agentic AI pipeline using LangChain Agents and Tool calling to automate candidate profiling",
-      "Implemented embedding-based semantic scoring and decision pipelines to automate applicant prioritization and screening workflows",
-      "Built an internal recruitment platform using React, TypeScript, and MongoDB, supporting workflows for 100+ recruiters in HCM division",
-      "Optimized Spring Boot services and MongoDB pipelines with asynchronous processing, improving API latency by 5% for recruiter-facing systems",
-      "Built reusable, WCAG-compliant UI components using GS' design system, accelerating feature delivery by 11% ensuring consistent UX",
-      "Collaborated in Agile teams to deliver type-safe React features, platform optimizations, and AI-driven integrations for recruiter-facing systems",
+      "Architected TalentFlowAI, a multi-step agentic AI pipeline using LangChain AgentExecutor with Pydantic-validated tools, GPT-4 via Azure OpenAI, and cosine similarity search over Pinecone vector embeddings to automate candidate screening.",
+      "Engineered a Python/FastAPI microservice for AI inference integrated with a Spring Boot backend over HTTP, following enterprise polyglot architecture patterns for production AI/ML in Java stacks.",
+      "Implemented production reliability guardrails — iteration caps, automatic retry on malformed tool calls, Pydantic input schema validation, and explicit zero-result handling — to prevent hallucinated candidates.",
+      "Built a candidate progression tracking platform in React/TypeScript with a Spring Boot/MongoDB backend, surfacing real-time pipeline blockers across pre-interview vetting, offer, and post-offer stages.",
+      "Integrated ServiceNow ticket visibility at pipeline blockers and built reusable WCAG-compliant UI components on the GS UI toolkit to ensure accessibility compliance.",
     ],
-    type: "swe",
+    tags: [
+      "LangChain",
+      "Agentic AI",
+      "GPT-4 / Azure OpenAI",
+      "Pinecone",
+      "FastAPI",
+      "React / TypeScript",
+      "Spring Boot",
+      "MongoDB",
+    ],
   },
   {
     company: "Saint-Gobain Research",
-    role: "Product Manager, Research Systems",
+    role: "Product Engineer, Research Systems",
     location: "Tamil Nadu, India",
-    date: "Jun 2024",
+    date: "Jan 2024 – Jun 2024",
     logo: "/logos/saint-gobain.png",
+    pdfPath: "/work-exp/saint-gobain.pdf",
     bullets: [
-      "Led development of a web-based analytics platform tracking glass performance across 15 experimental use cases (glass fiber)",
-      "Defined data standards and metadata governance to support real-time comparison of 30+ material scenarios, reducing analysis time by 12%",
-      "Developed Node.js backend services and integrated Python data pipelines for automated ingestion, processing, and validation",
-      "Integrated research analytics with Salesforce and HubSpot APIs to support automated technical reporting and customer insights",
+      "Led a Phase 0 feasibility study evaluating AI automation potential for experiment intake — designed an OpenAI extraction layer with tool calling to parse unstructured submissions into JSON records, quantifying 800+ requests / 2 weeks with 76% of QA tasks automatable.",
+      "Built an analytics platform with a Node.js/REST backend and Python ingestion pipelines supporting comparison across 30+ material scenarios and 15 experimental use cases, enabling researchers to cut manual aggregation.",
+      "Designed a Pydantic schema with bulk insert via SQLAlchemy, enforcing canonical data standards across 8 global sites.",
+      "Integrated the platform with Salesforce (sObject API) for technical reporting and to surface material data directly on client records.",
     ],
-    type: "swe",
+    tags: [
+      "OpenAI",
+      "Tool Calling",
+      "Node.js",
+      "Python",
+      "SQLAlchemy",
+      "Pydantic",
+      "Salesforce",
+    ],
   },
   {
     company: "TeleApps",
-    role: "Associate Product Engineer",
+    role: "Associate Product Operations Engineer",
     location: "Tamil Nadu, India",
-    date: "Mar 2023",
+    date: "Mar 2022 – Dec 2023",
     logo: "/logos/teleapps.avif",
+    pdfPath: "/work-exp/teleapps-product-engineer.pdf",
     bullets: [
-      "Engineered event-driven ML inference services using Kafka, FastAPI, Redis caching, and ONNX runtime, enabling asynchronous model scoring and sub-200ms response times under concurrent campaign workloads",
-      "Deployed Containerized microservices for real-time inference and internal reporting, implementing model versioning, lazy loading, and request-level caching, reducing cold-start latency and inference load time by ~20%",
-      "Created end-to-end feature engineering pipelines using pandas and time-series transformations including lag features, rolling windows, seasonality indicators, and trend decomposition, improving model stability by ~15%",
+      "Engineered ML inference services using Kafka, FastAPI, Redis caching, and ONNX Runtime to classify caller intent in IVR utterances for a telecom client, achieving sub-200ms end-to-end latency under concurrent campaign workloads without GPU infrastructure.",
+      "Containerized microservices for inference with request-level caching, model versioning, and lazy loading at first inference request.",
+      "Designed ETL pipelines in pandas including lag features, rolling windows, seasonality indicators, and trend decomposition for a call-volume workload prediction model, reducing customer wait times.",
     ],
-    type: "swe",
-  },
-  {
-    company: "Bahwan CyberTek",
-    role: "Technology Analyst",
-    location: "Chennai, Tamil Nadu, India",
-    date: "Feb 2022",
-    logo: "/logos/bahwan-cybertek.png",
-    bullets: [
-      "Supported enterprise data by extracting, validating, and reconciling large datasets across multiple systems to improve client reporting accuracy",
-      "Built Python based data analysis scripts and dashboards to evaluate user behavior and market trends for consulting and delivery teams",
-      "Assisted in configuring project workflows using Adobe Workfront, supporting task tracking, documentation, and cross team coordination across analytics projects",
+    tags: [
+      "Kafka",
+      "FastAPI",
+      "Redis",
+      "ONNX Runtime",
+      "Python",
+      "Pandas",
+      "Docker",
     ],
-    type: "swe",
-  },
-];
-
-// ML/AI Experiences - exactly as per ML resume
-export const mlExperiences: Experience[] = [
-  {
-    company: "Goldman Sachs",
-    role: "Summer Engineer Analyst",
-    location: "Dallas, Texas, USA",
-    date: "Aug 2025",
-    logo: "/logos/goldman-sachs.png",
-    bullets: [
-      "Built and deployed TalentFlowAI, a multi-step agentic LLM pipeline using LangChain and tool calling to automate candidate profiling",
-      "Implemented embedding-based semantic retrieval and ranking pipelines to automate applicant prioritization and recruiter screening workflows",
-      "Designed decision orchestration logic to generate screening summaries and recommend next-stage actions using confidence signals",
-      "Developed recruiter-facing web interfaces in React and TypeScript to surface AI outputs with traceability and human-in-the-loop controls",
-      "Optimized Spring Boot services and MongoDB pipelines with asynchronous processing, improving inference and retrieval latency by 5%",
-      "Built reusable, WCAG-compliant UI components aligned with GS design system to standardize AI-powered recruiting workflows",
-    ],
-    type: "ml",
-  },
-  {
-    company: "Saint-Gobain Research",
-    role: "Product Manager, Research Systems",
-    location: "Tamil Nadu, India",
-    date: "Jun 2024",
-    logo: "/logos/saint-gobain.png",
-    bullets: [
-      "Built a data analytics platform using regression model workflows to model experimental material performance across 15 research programs",
-      "Designed standardized data schemas and metadata pipelines to enable large-scale comparison of 30+ material scenarios",
-      "Developed Node.js services and Python pipelines for automated feature extraction, validation, and data quality monitoring",
-      "Integrated research datasets with Salesforce and HubSpot APIs to enable ML-driven technical reporting and customer insights",
-    ],
-    type: "ml",
   },
   {
     company: "TeleApps",
-    role: "Associate Product Engineer",
+    role: "Technology Operations Analyst",
     location: "Tamil Nadu, India",
-    date: "Mar 2023",
+    date: "Jun 2021 – Feb 2022",
     logo: "/logos/teleapps.avif",
+    pdfPath: "/work-exp/teleapps-tech-ops.pdf",
     bullets: [
-      "Built RESTful ML analytics services using TensorFlow and Flask to power customer engagement and campaign performance platforms",
-      "Deployed containerized ML microservices for real-time inference and internal reporting, implementing model versioning, lazy loading, and request-level caching, reducing cold-start latency and inference load time by ~20%",
-      "Created end-to-end feature engineering pipelines using pandas and time-series transformations including lag features, rolling windows, seasonality indicators, and trend decomposition, improving model stability by ~15%",
+      "Built Python data pipelines to extract, validate, and reconcile wind turbine sensor time-series data — implementing per-column z-score outlier detection and forward-fill gap recovery to preserve data integrity without silently dropping flagged readings.",
+      "Developed performance dashboards using matplotlib and seaborn (heatmaps, anomaly scatter plots), enabling operations teams to identify underperforming turbines.",
+      "Configured Adobe Workfront project workflows with task dependencies, approval stages, and cross-team status tracking to coordinate batched data deliverables to client-facing delivery teams.",
     ],
-    type: "ml",
-  },
-  {
-    company: "Bahwan CyberTek",
-    role: "Technology Analyst",
-    location: "Chennai, Tamil Nadu, India",
-    date: "Feb 2022",
-    logo: "/logos/bahwan-cybertek.png",
-    bullets: [
-      "Supported enterprise data by extracting, validating, and reconciling large datasets across multiple systems to improve client reporting accuracy",
-      "Built Python based data analysis scripts and dashboards to evaluate user behavior and market trends for consulting and delivery teams",
-      "Assisted in configuring project workflows using Adobe Workfront, supporting task tracking, documentation, and cross team coordination across analytics projects",
+    tags: [
+      "Python",
+      "Pandas",
+      "Matplotlib",
+      "Seaborn",
+      "Time-Series",
+      "Adobe Workfront",
     ],
-    type: "ml",
   },
 ];
 
-// Data Experiences - exactly as per Data resume
-export const dataExperiences: Experience[] = [
-  {
-    company: "Goldman Sachs",
-    role: "Summer Engineer Analyst",
-    location: "Dallas, Texas, USA",
-    date: "Aug 2025",
-    logo: "/logos/goldman-sachs.png",
-    bullets: [
-      "Built hiring analytics datasets using PostgreSQL and Amazon Redshift to analyze 10,000+ applicants and recruitment funnel performance",
-      "Developed automated scoring workflows using Apache NiFi and scheduled batch jobs, reducing manual recruiter review effort by ~16%",
-      "Designed hiring performance dashboards in Qlik Sense tracking 20+ KPIs including time-to-hire, offer yield, and recruiter productivity",
-      "Implemented data reconciliation, completeness checks, and audit logging frameworks to improve reporting reliability by ~13%",
-      "Integrated ATS, HRIS, and assessment data sources using REST APIs and data connectors to enable cross-system workforce analytics",
-    ],
-    type: "data",
-  },
-  {
-    company: "Saint-Gobain Research",
-    role: "Product Manager, Research Systems",
-    location: "Tamil Nadu, India",
-    date: "Jun 2024",
-    logo: "/logos/saint-gobain.png",
-    bullets: [
-      "Analyzed experimental data from 15+ glass fiber trials using SQL-based aggregation to identify durability trends for R&D teams",
-      "Built metadata frameworks enabling comparison of 30+ material variants, reducing analysis turnaround by ~12% for research engineers",
-      "Developed automated data pipelines and validation workflows using Airflow, dbt, and BigQuery, with downstream reporting in Tableau and Looker, improving data reliability by ~11% for business analytics",
-      "Designed KPI dashboards with lab performance metrics in CRM systems to support data-driven material selection and customer engg. decisions",
-    ],
-    type: "data",
-  },
-  {
-    company: "TeleApps",
-    role: "Associate Product Engineer",
-    location: "Tamil Nadu, India",
-    date: "Mar 2023",
-    logo: "/logos/teleapps.avif",
-    bullets: [
-      "Built customer analytics pipelines integrating Google Analytics, CRM data, and Amazon Redshift to analyze 300k+ user interactions and track acquisition, engagement, and conversion funnels across campaigns",
-      "Developed executive and marketing performance dashboards in Power BI and Excel Power Pivot tracking 15+ KPIs including ROI, CTR, retention, and cohort behavior for leadership teams",
-      "Implemented response modeling using Spark and scikit-learn to identify high-value users, improving campaign targeting efficiency by ~14%",
-    ],
-    type: "data",
-  },
-  {
-    company: "Bahwan CyberTek",
-    role: "Technology Analyst",
-    location: "Chennai, Tamil Nadu, India",
-    date: "Feb 2022",
-    logo: "/logos/bahwan-cybertek.png",
-    bullets: [
-      "Built reconciliation pipelines using SQL Server, Informatica PowerCenter, and Excel Power Query to validate 500K+ records across finance and operations systems",
-      "Developed operational dashboards in Power BI and SSRS to track service delivery KPIs, utilization, and exception rates for consulting teams",
-      "Implemented audit frameworks using Talend Data Quality and custom validation scripts, reducing reporting discrepancies by ~18%",
-    ],
-    type: "data",
-  },
-];
-
-export function getExperiencesByType(type: ExperienceType): Experience[] {
-  switch (type) {
-    case "swe":
-      return sweExperiences;
-    case "ml":
-      return mlExperiences;
-    case "data":
-      return dataExperiences;
-    default:
-      return [];
-  }
-}
+export type ProjectCategory = "Software Engineering" | "AI / ML" | "Data Analytics";
 
 export interface Project {
   id: string;
   title: string;
-  subtitle: string;
+  category: ProjectCategory;
   description: string;
   date: string;
-  type: ExperienceType;
   highlights: string[];
+  tags: string[];
   details: string;
+  /** Tagline on cover SVG */
+  coverLabel: string;
 }
 
-// SWE Projects - exactly 3 from SWE resume
-export const sweProjects: Project[] = [
+export const projects: Project[] = [
+  // SOFTWARE ENGINEERING
   {
     id: "high-frequency-queue",
     title: "High-Frequency Event Queue Simulator",
-    subtitle: "Distributed Event Simulation Platform",
+    category: "Software Engineering",
     description:
-      "A distributed event simulation platform processing 50K+ events per minute using Kafka topics with partitioned producers",
+      "Distributed event simulation platform processing 50K+ events per minute using Kafka topics with partitioned producers and Redis-backed coordination.",
     date: "Mar 2025",
-    type: "swe",
     highlights: [
-      "Designed a distributed event simulation platform processing 50K+ events per minute, using Kafka topics with partitioned producers and Redis backed coordination to simulate real world queue bursts, retries, and backpressure under peak load conditions",
-      "Engineered real-time dashboards in React with WebSocket updates to monitor throughput, retries, and failure rates under heavy load",
-      "Benchmarked and optimized end to end streaming pipelines by tuning Kafka batch sizes, consumer concurrency, and Redis access patterns, achieving sub 200ms end to end latency while maintaining delivery guarantees in high volume scenarios",
+      "Designed a distributed event simulation platform processing 50K+ events per minute using Kafka topics with partitioned producers and Redis-backed coordination, simulating real-world queue bursts, retries, and backpressure under peak load.",
+      "Engineered real-time React dashboards with WebSocket updates to monitor throughput, retries, and failure rates under heavy load.",
+      "Benchmarked and tuned Kafka batch sizes, consumer concurrency, and Redis access patterns, achieving sub-200ms end-to-end latency while preserving delivery guarantees.",
     ],
+    tags: ["Kafka", "Redis", "React", "WebSocket", "Distributed Systems"],
     details:
-      "This high-frequency event queue simulator demonstrates expertise in distributed systems and real-time data processing. The platform simulates real-world queue scenarios including bursts, retries, and backpressure under peak load conditions. The React-based monitoring dashboard provides real-time visibility into throughput, failure rates, and system health.",
+      "A high-frequency event queue simulator showcasing distributed systems and real-time data processing under realistic load patterns.",
+    coverLabel: "KAFKA · REDIS · STREAMING",
   },
   {
     id: "mini-s3",
-    title: "Mini S3 - Fault-Tolerant File Storage",
-    subtitle: "Distributed Object Storage System",
+    title: "Mini S3 — Fault-Tolerant File Storage",
+    category: "Software Engineering",
     description:
-      "A distributed object storage system in Java using gRPC for node to node communication, consistent hashing for data placement, and configurable replication strategies",
+      "Distributed object storage system in Java with gRPC node-to-node communication, consistent hashing for placement, and configurable replication.",
     date: "May 2024",
-    type: "swe",
     highlights: [
-      "Implemented a distributed object storage system in Java using gRPC for node to node communication, consistent hashing for data placement, and configurable replication strategies to ensure durability and horizontal scalability",
-      "Built versioning and partition-tolerance mechanisms, modeling S3-like reliability across multiple concurrent users",
-      "Designed and evaluated replication factor policies by simulating node outages and rebalancing events, reducing storage overhead by 13% while preserving 99.6% fault tolerance under modeled failure conditions",
+      "Implemented a distributed object storage system in Java using gRPC for node-to-node communication, consistent hashing for data placement, and configurable replication strategies.",
+      "Built versioning and partition-tolerance mechanisms modeling S3-like reliability across multiple concurrent users.",
+      "Evaluated replication-factor policies by simulating node outages and rebalancing, reducing storage overhead by 13% while preserving 99.6% fault tolerance.",
     ],
+    tags: ["Java", "gRPC", "Consistent Hashing", "Replication"],
     details:
-      "Mini S3 is a distributed object storage system that replicates the core functionality of Amazon S3. The system uses consistent hashing for data placement across nodes and implements configurable replication strategies for durability. The gRPC-based communication layer ensures efficient node-to-node data transfer.",
+      "Mini S3 replicates the core functionality of Amazon S3 — consistent hashing for placement, configurable replication, and gRPC for efficient inter-node transfer.",
+    coverLabel: "GRPC · HASHING · REPLICATION",
   },
   {
     id: "mini-okta",
-    title: "Mini-Okta - Secure Authentication Service",
-    subtitle: "Authentication and MFA Service",
+    title: "Mini-Okta — Secure Authentication Service",
+    category: "Software Engineering",
     description:
-      "A secure authentication and MFA service using Node.js, JWT, and OAuth2, supporting token refresh workflows",
+      "Authentication and MFA service using Node.js, JWT, and OAuth2 with token-refresh workflows and Redis-cached session validation.",
     date: "Feb 2024",
-    type: "swe",
     highlights: [
-      "Developed a secure authentication and MFA service using Node.js, JWT, and OAuth2, supporting token refresh workflows",
-      "Implemented role-based access control (RBAC) middleware for granular user and admin-level permissions",
-      "Integrated Redis based caching for active token state and session validation, optimizing token lookup and refresh paths and reducing authentication latency by ~9% under concurrent request loads",
+      "Developed a secure authentication and MFA service using Node.js, JWT, and OAuth2 with token-refresh workflows.",
+      "Implemented role-based access-control (RBAC) middleware for granular user and admin permissions.",
+      "Integrated Redis-based caching for active token state and session validation, reducing authentication latency by ~9% under concurrent load.",
     ],
+    tags: ["Node.js", "JWT", "OAuth2", "Redis", "RBAC"],
     details:
-      "Mini-Okta provides enterprise-grade authentication capabilities including multi-factor authentication, OAuth2 flows, and comprehensive session management. The RBAC middleware enables fine-grained permission control for different user roles. Redis caching optimizes token validation for high-throughput scenarios.",
+      "Enterprise-grade authentication: MFA, OAuth2 flows, RBAC, and Redis-cached sessions for high-throughput token validation.",
+    coverLabel: "JWT · OAUTH2 · MFA",
   },
-];
 
-// ML Projects - exactly 3 from ML resume
-export const mlProjects: Project[] = [
+  // AI / ML
   {
     id: "taskpilot-ai",
     title: "TaskPilot AI",
-    subtitle: "Autonomous Workflow Execution System",
+    category: "AI / ML",
     description:
-      "An AI workflow engine using OpenAI APIs, FAISS vector search, and FastAPI to interpret and execute 1,000+ multi-step task scenarios",
+      "Autonomous workflow execution engine using OpenAI APIs, FAISS, and FastAPI to plan and execute 1,000+ multi-step task scenarios with retrieval-augmented planning.",
     date: "Mar 2025",
-    type: "ml",
     highlights: [
-      "Built an AI workflow engine using OpenAI APIs, FAISS vector search, and FastAPI to interpret and execute 1,000+ multi-step task scenarios",
-      "Implemented retrieval-augmented planning with semantic indexing to ground task execution across 50K+ internal documents",
-      "Developed dynamic tool-routing layers integrating REST APIs, PostgreSQL, and AWS services, enabling automated execution with sub-400ms response latency",
-      "Designed feedback, verification, and rollback mechanisms with confidence scoring and retry policies, reducing execution failures by ~22%",
+      "Built an AI workflow engine using OpenAI APIs, FAISS vector search, and FastAPI to interpret and execute 1,000+ multi-step task scenarios.",
+      "Implemented retrieval-augmented planning with semantic indexing to ground execution across 50K+ internal documents.",
+      "Developed dynamic tool-routing layers integrating REST APIs, PostgreSQL, and AWS services with sub-400ms response latency.",
+      "Designed feedback, verification, and rollback mechanisms with confidence scoring and retry policies, reducing execution failures by ~22%.",
     ],
+    tags: ["OpenAI", "FAISS", "RAG", "FastAPI", "Tool Routing"],
     details:
-      "TaskPilot AI is an autonomous workflow execution system that leverages large language models to interpret and execute complex multi-step tasks. The system uses RAG (Retrieval-Augmented Generation) to ground task execution in relevant context from internal documents, ensuring accurate and contextual responses.",
+      "Autonomous workflow execution grounded by RAG over internal documents, with confidence scoring, verification, and rollback.",
+    coverLabel: "AGENTS · RAG · TOOL ROUTING",
   },
   {
     id: "hiresense-ai",
     title: "HireSense AI",
-    subtitle: "Resume & Interview Intelligence Platform",
+    category: "AI / ML",
     description:
-      "An AI-powered recruiting intelligence platform using HuggingFace Transformers, OpenAI embeddings, Pinecone, and RAG pipelines",
+      "AI recruiting intelligence platform using HuggingFace Transformers, OpenAI embeddings, Pinecone, and RAG to analyze 10K+ resumes and generate skill-gap reports.",
     date: "May 2024",
-    type: "ml",
     highlights: [
-      "Built an AI-powered recruiting intelligence platform using HuggingFace Transformers, OpenAI embeddings, Pinecone, and RAG pipelines that combined vector search and structured metadata to analyze 10K+ resumes and job descriptions and generate automated skill gap reports",
-      "Fine-tuned domain-specific language models on curated hiring datasets, improving skill-matching precision by ~17%",
-      "Deployed scalable inference services using FastAPI, Docker, and AWS ECS, supporting 200+ concurrent users with real-time feedback",
+      "Built an AI recruiting platform using HuggingFace Transformers, OpenAI embeddings, Pinecone, and RAG to analyze 10K+ resumes and job descriptions and generate automated skill-gap reports.",
+      "Fine-tuned domain-specific language models on curated hiring datasets, improving skill-matching precision by ~17%.",
+      "Deployed scalable inference using FastAPI, Docker, and AWS ECS, supporting 200+ concurrent users with real-time feedback.",
     ],
+    tags: ["HuggingFace", "Pinecone", "RAG", "Fine-tuning", "AWS ECS"],
     details:
-      "HireSense AI revolutionizes the recruiting process by combining vector search with RAG pipelines to analyze resumes and job descriptions at scale. The platform uses fine-tuned language models trained on hiring datasets to understand domain-specific terminology and provide accurate skill matching.",
+      "Combines vector search and structured metadata to analyze resumes at scale, with fine-tuned language models for domain-specific skill matching.",
+    coverLabel: "EMBEDDINGS · RAG · FINE-TUNING",
   },
   {
     id: "riskguard-ml",
     title: "RiskGuard ML",
-    subtitle: "Transaction Fraud Detection System",
+    category: "AI / ML",
     description:
-      "Supervised and semi-supervised fraud detection models using XGBoost, Random Forest, and PyTorch on 5M+ transactional records",
+      "Supervised and semi-supervised fraud-detection models using XGBoost, Random Forest, and PyTorch on 5M+ transactional records, deployed for real-time risk scoring.",
     date: "Feb 2024",
-    type: "ml",
     highlights: [
-      "Built supervised and semi-supervised fraud detection models using XGBoost, Random Forest, and PyTorch on 5M+ transactional records",
-      "Implemented cross-validation, ROC-AUC optimization, and cost-sensitive threshold tuning to improve fraud detection recall by ~19%",
-      "Deployed real-time risk scoring APIs using Flask, Redis caching, and Kubernetes with monitoring and drift detection pipelines",
+      "Built supervised and semi-supervised fraud-detection models using XGBoost, Random Forest, and PyTorch on 5M+ transactional records.",
+      "Implemented cross-validation, ROC-AUC optimization, and cost-sensitive threshold tuning to improve fraud-detection recall by ~19%.",
+      "Deployed real-time risk-scoring APIs using Flask, Redis caching, and Kubernetes with monitoring and drift detection.",
     ],
+    tags: ["XGBoost", "PyTorch", "Kubernetes", "Drift Detection"],
     details:
-      "RiskGuard ML is a comprehensive fraud detection system that combines multiple machine learning approaches to identify fraudulent transactions in real-time. The system uses ensemble methods with XGBoost and Random Forest for high accuracy, while PyTorch-based neural networks handle complex pattern recognition.",
+      "Ensemble fraud detection with XGBoost and Random Forest plus PyTorch neural pattern recognition, deployed for real-time risk scoring.",
+    coverLabel: "XGBOOST · PYTORCH · ROC-AUC",
   },
-];
 
-// Data Projects - exactly 3 from Data resume
-export const dataProjects: Project[] = [
+  // DATA ANALYTICS
   {
     id: "revenuepulse",
     title: "RevenuePulse",
-    subtitle: "Enterprise Sales & Forecasting Analytics Platform",
+    category: "Data Analytics",
     description:
-      "A centralized revenue analytics platform using Snowflake, dbt, and Airflow to consolidate billing records across 6 regional markets",
+      "Centralized revenue analytics platform using Snowflake, dbt, and Airflow to consolidate billing across 6 regional markets, with predictive forecasting.",
     date: "Mar 2025",
-    type: "data",
     highlights: [
-      "Built a centralized revenue analytics platform using Snowflake, dbt, and Airflow to consolidate billing records across 6 regional markets",
-      "Designed star-schema data models enabling forecasting, win-rate analysis, and pipeline coverage reporting for 50+ sales leaders in Looker",
-      "Developed predictive revenue forecasts using Prophet and XGBoost, improving quarterly forecast accuracy by ~11%",
-      "Created executive dashboards tracking ARR, churn, deal velocity, and quota attainment for future stakeholders",
+      "Built a centralized revenue analytics platform using Snowflake, dbt, and Airflow to consolidate billing records across 6 regional markets.",
+      "Designed star-schema models enabling forecasting, win-rate analysis, and pipeline coverage reporting for 50+ sales leaders in Looker.",
+      "Developed predictive revenue forecasts using Prophet and XGBoost, improving quarterly forecast accuracy by ~11%.",
+      "Created executive dashboards tracking ARR, churn, deal velocity, and quota attainment.",
     ],
+    tags: ["Snowflake", "dbt", "Airflow", "Looker", "Prophet"],
     details:
-      "RevenuePulse is an enterprise-grade revenue analytics platform that provides comprehensive visibility into sales performance and forecasting. The platform consolidates data from multiple regional markets into a unified data warehouse using Snowflake and dbt.",
+      "Enterprise revenue analytics consolidating six markets in a unified Snowflake warehouse with dbt models and predictive forecasts.",
+    coverLabel: "ARR · CHURN · FORECASTING",
   },
   {
     id: "growthlens",
     title: "GrowthLens",
-    subtitle: "Customer Funnel & Retention Intelligence System",
+    category: "Data Analytics",
     description:
-      "End-to-end growth analytics pipelines integrating Google Analytics, Segment, and Amazon Redshift",
+      "End-to-end growth analytics integrating Google Analytics, Segment, and Redshift to analyze 10K+ user sessions across cohort, attribution, and LTV models.",
     date: "May 2024",
-    type: "data",
     highlights: [
-      "Built end-to-end growth analytics pipelines integrating Google Analytics, Segment, and Amazon Redshift to analyze 10k+ historical user sessions across web channels",
-      "Implemented cohort, attribution, and lifetime value analysis using dbt and Spark SQL, improving simulated channel ROI by ~14%",
-      "Developed real-time marketing and product dashboards in Tableau and Amplitude tracking 25+ behavioral and performance metrics",
-      "Applied A/B testing and uplift modeling on experimental datasets to evaluate campaign and feature impact, increasing conversion rates by ~9%",
+      "Built end-to-end growth analytics pipelines integrating Google Analytics, Segment, and Amazon Redshift to analyze 10K+ historical user sessions across web channels.",
+      "Implemented cohort, attribution, and lifetime-value analysis using dbt and Spark SQL, improving channel ROI by ~14%.",
+      "Developed real-time marketing and product dashboards in Tableau and Amplitude tracking 25+ behavioral and performance metrics.",
+      "Applied A/B testing and uplift modeling to evaluate campaign and feature impact, increasing conversion rates by ~9%.",
     ],
+    tags: ["Redshift", "dbt", "Spark SQL", "Tableau", "A/B Testing"],
     details:
-      "GrowthLens provides comprehensive customer analytics capabilities including funnel analysis, cohort tracking, and lifetime value modeling. The platform integrates data from multiple sources to create a unified view of customer behavior.",
+      "Customer analytics across funnel, cohort, and LTV models with uplift testing and real-time dashboards in Tableau and Amplitude.",
+    coverLabel: "COHORT · ATTRIBUTION · LTV",
   },
   {
     id: "opsguard",
     title: "OpsGuard",
-    subtitle: "Operational Risk & Performance Analytics Platform",
+    category: "Data Analytics",
     description:
-      "An operational analytics system using Azure Data Factory, Synapse Analytics, and Power BI",
+      "Operational analytics on Azure Data Factory and Synapse with Isolation-Forest anomaly detection and automated root-cause reporting.",
     date: "Feb 2024",
-    type: "data",
     highlights: [
-      "Built an operational analytics system using Azure Data Factory, Synapse Analytics, and Power BI to process operational records per month in simulated service environments",
-      "Deployed anomaly detection and threshold-based alerting pipelines using Isolation Forest and statistical control charts to monitor SLA compliance, proactively flag operational risks, and reduce simulated SLA violations by ~16%",
-      "Automated root-cause analysis reports, reducing incident resolution time by ~21% in controlled testing scenarios",
+      "Built an operational analytics system using Azure Data Factory, Synapse Analytics, and Power BI to process operational records monthly in simulated service environments.",
+      "Deployed anomaly detection and threshold-based alerting using Isolation Forest and statistical control charts, reducing simulated SLA violations by ~16%.",
+      "Automated root-cause analysis reports, reducing incident resolution time by ~21% in controlled testing.",
     ],
+    tags: ["Azure Data Factory", "Synapse", "Power BI", "Isolation Forest"],
     details:
-      "OpsGuard provides comprehensive operational risk monitoring and performance analytics. The platform uses machine learning-based anomaly detection with Isolation Forest to identify potential issues before they impact SLA compliance.",
+      "Operational risk and performance monitoring with ML anomaly detection and automated RCA reporting.",
+    coverLabel: "SLA · ANOMALY · RCA",
   },
 ];
-
-// Get all projects combined
-export const projects: Project[] = [...sweProjects, ...mlProjects, ...dataProjects];
-
-export function getProjectsByType(type: ExperienceType): Project[] {
-  switch (type) {
-    case "swe":
-      return sweProjects;
-    case "ml":
-      return mlProjects;
-    case "data":
-      return dataProjects;
-    default:
-      return [];
-  }
-}
 
 export function getProjectById(id: string): Project | undefined {
   return projects.find((p) => p.id === id);
 }
 
-// Skills as arrays of strings for bubble display - exactly as per resumes
-export const skillsByCategory = {
-  swe: {
-    title: "Software Engineering",
+export interface SkillGroup {
+  title: string;
+  skills: string[];
+}
+
+export const skillGroups: SkillGroup[] = [
+  {
+    title: "Languages",
     skills: [
-      // Programming Languages
-      "Python", "C", "C++", "JAVA", "R", "Ruby", "JavaScript", "TypeScript", "Go", "Rust", "Bash/Shell Scripting",
-      // Tools
-      "Git", "RESTful APIs", "GraphQL", "Docker", "AWS", "Azure", "Jenkins", "Kubernetes", "MongoDB", "MySQL", "Spring Boot", "Adobe Workfront",
-      // Web Development
-      "React.js", "Node.js", "HTML5", "Django", "Flask", "Ruby on Rails",
-      // Knowledge areas
-      "Web Development", "SDLC", "Version Control Systems", "API Design", "Software Architecture", "Cross-Platform Development",
+      "Python",
+      "TypeScript",
+      "JavaScript",
+      "Java",
+      "Go",
+      "Rust",
+      "Ruby",
+      "C / C++",
+      "R",
+      "Bash / Shell",
+      "SQL",
     ],
   },
-  ml: {
-    title: "Machine Learning & AI",
+  {
+    title: "Web & Backend",
     skills: [
-      // LLM & Agentic Systems
-      "Large Language Models (GPT-based, OpenAI API, HuggingFace)", "Prompt Engineering", "Tool and Function Calling",
-      "Retrieval-Augmented Generation (RAG)", "Embedding Models", "Semantic Retrieval", "Autonomous Reasoning",
-      "Decision Orchestration", "Verification Loops", "Human-in-the-Loop Systems",
-      // Statistical Modeling
-      "Supervised and Unsupervised Learning", "Ensemble Methods", "XGBoost", "LightGBM", "Random Forest",
-      "scikit-learn", "TensorFlow", "PyTorch", "Feature Engineering", "Cross-Validation",
-      "Hyperparameter Optimization", "Anomaly Detection", "Model Explainability (SHAP)",
-      // AI Infrastructure
-      "Distributed Data Pipelines", "ETL and Feature Stores", "Batch and Streaming Processing",
-      "RESTful and Async APIs (FastAPI, Flask, Spring Boot)", "Vector Databases (FAISS)", "MongoDB",
-      "PostgreSQL", "Redis", "Caching and Query Optimization", "Workflow Orchestration",
-      // MLOps
-      "Containerized ML Services (Docker)", "Model Versioning and Experiment Tracking (MLflow)",
-      "CI/CD Pipelines", "Scalable Inference Architectures", "API Gateways",
-      "Monitoring and Logging", "Drift Detection", "Performance Profiling", "Cloud Platforms (AWS, GCP)",
+      "React.js",
+      "Next.js",
+      "Node.js",
+      "Tailwind CSS",
+      "HTML5",
+      "Spring Boot",
+      "FastAPI",
+      "Django",
+      "Flask",
+      "Ruby on Rails",
+      "REST APIs",
+      "GraphQL",
+      "WebSockets",
+      "Microservices",
     ],
   },
-  data: {
-    title: "Data Science & Analytics",
+  {
+    title: "AI & ML",
     skills: [
-      // Data Warehousing & Engineering
-      "Snowflake", "BigQuery", "Redshift", "Synapse Analytics", "dbt", "Airflow", "Azure Data Factory", "Informatica",
-      // Business Intelligence
-      "Tableau", "Looker", "Power BI", "SSRS", "Amplitude", "Excel Power Pivot",
-      // Analytics & Modeling
-      "Advanced SQL", "Spark SQL", "XGBoost", "scikit-learn", "cohort analysis", "A/B testing", "attribution modeling",
-      // Product Analytics
-      "Google Analytics", "Segment", "CRM Analytics", "funnel analysis", "retention modeling", "LTV analysis",
+      "LangChain",
+      "LangGraph",
+      "MCP (Model Context Protocol)",
+      "Claude Code",
+      "OpenAI / GPT-4",
+      "Hugging Face",
+      "LlamaIndex",
+      "n8n",
+      "Whisper",
+      "Tool / Function Calling",
+      "Retrieval-Augmented Generation (RAG)",
+      "Vector DBs (Pinecone, FAISS)",
+      "Agentic Workflows",
+      "Prompt Engineering",
+      "PyTorch",
+      "scikit-learn",
     ],
   },
-};
+  {
+    title: "Data & Analytics",
+    skills: [
+      "Snowflake",
+      "BigQuery",
+      "Redshift",
+      "Databricks",
+      "dbt",
+      "Apache Airflow",
+      "Apache Spark",
+      "Apache Kafka",
+      "Pandas",
+      "NumPy",
+      "Advanced SQL",
+      "Tableau",
+      "Power BI",
+      "Looker",
+      "ETL / ELT Pipelines",
+      "Time-Series Forecasting",
+    ],
+  },
+  {
+    title: "Cloud & Infrastructure",
+    skills: [
+      "AWS (EC2, S3, Lambda, ECS, Redshift)",
+      "Azure (OpenAI, Functions, Synapse)",
+      "GCP (BigQuery)",
+      "Docker",
+      "Kubernetes",
+      "Terraform",
+      "Serverless",
+      "MongoDB",
+      "PostgreSQL",
+      "MySQL",
+      "Redis",
+    ],
+  },
+  {
+    title: "Tools & Practice",
+    skills: [
+      "Git",
+      "GitHub",
+      "GitLab",
+      "Jira",
+      "Confluence",
+      "Jenkins",
+      "GitHub Actions",
+      "CI / CD Pipelines",
+      "Postman",
+      "Agile / Scrum",
+      "SDLC",
+      "Code Review",
+      "API Design",
+      "System Design",
+      "Cross-Platform Development",
+    ],
+  },
+];
