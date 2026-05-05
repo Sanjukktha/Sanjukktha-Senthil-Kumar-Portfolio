@@ -32,7 +32,7 @@ export default function Home() {
           letterSpacing: "0.04em",
         }}
       >
-        © {new Date().getFullYear()} Sanjukktha Senthil Kumar · Arlington, TX
+        © {new Date().getFullYear()} Sanjukktha Senthil Kumar · Dallas, TX
       </footer>
     </>
   );
